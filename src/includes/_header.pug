@@ -1,0 +1,25 @@
+header.header
+  .container
+    .row
+      .col
+        h1.header__logo.f-start.m-y-0
+          img(src="images/main-logo.png",alt="dripple-logo")
+        nav.header__nav.f-start
+          ul.list.list--inline
+            li(class=page === 'dribble' ? 'active' : ''): a(href="dribble.html") dribble
+            li(class=page === 'buckets' ? 'active' : ''): a(href="buckets.html") buckets
+            li(class=page === 'users' ? 'active' : ''): a(href="users.html") users
+            li(class=page === 'lists' ? 'active' : ''): a(href="lists.html") lists
+        div.f-end
+          ul.header__user-area.list.list--inline(class= loggedIn === true ? 'd-none' : 'd-inline-block')
+            li: a(href="#") signup
+            li: a(href="#") signin
+          div(class= loggedIn === true ? 'd-block' : 'd-none') 
+            .media.d-flex
+              div.media__img.media__img--medium
+                img(src="images/card2.png",alt="user image").img-responsive
+              div.media__dets
+                form(method="")
+                  label(for="search").visually-hidden Search
+                  input(type="text",name="search",id="search")
+                  button 

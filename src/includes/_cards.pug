@@ -1,0 +1,38 @@
+div.container
+  h1.title.title--main Dribbles
+  ul.cards.row.row--4.row--xs.row--sm--2.row--md--3
+    - for (var i = 0; i < 8; i++) {
+      li.card.col
+        div.card__comp
+          div.card__img
+          a(data-fancybox,data-src="#modal",href="javascript:;").d-block
+            img(src="images/card.png").img-responsive
+            .card__details.animate
+              h3.title.title--secondary Dribble title
+              p.p.p--secondary.m-y-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta a massa auctor pharetra.
+              p.p.p--small.card--da August 30, 2018
+          ul.card__react.list--inline.text-end
+            li
+              a(href="#").react.react--views
+                span.react__count 4,234
+                span.visually-hidden views
+            li
+              a(href="#").react.react--comments
+                span.react__count 23
+                span.visually-hidden comments
+            li
+              a(href="#").react.react--likes
+                span.react__count 3
+                span.visually-hidden likes
+        div.media
+          div.media__img.media__img--small.f-start
+            img(src="images/card2.png",alt="dribble-card-onwer-image").img-responsive
+          div.media__details
+            p.card__designer-name.m-y-0 somename
+    - }
+  div.actions
+    div(class=loggedIn === true ? 'd-none' : 'd-block')
+      button.btn.btn--lg.btn--pink.d-block  Sign up to continue
+      button.btn.btn--lg.btn--transparent.d-block or sign in
+    button.btn.btn--lg.btn--outline(class=loggedIn === true ? 'd-block' : 'd-none')  Load more
+  include _modal
